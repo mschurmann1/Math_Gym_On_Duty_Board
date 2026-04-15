@@ -18,16 +18,18 @@
 
 <!-- On-Duty Grid -->
 <h1 style="display:block; width:fit-content; margin:10px auto;">These Tutors Are Here to Help — Just Raise Your Hand!</h1>
-<h2 id="todayDate" style="display:block; text-align:center; width:fit-content; margin:10px auto; background:white; color:black; padding:8px 16px; border-radius:8px;"></h2>
+<h2 id="todayDate" style="display:block; text-align:center; width:fit-content; margin:10px auto; background:white; color:black; padding:8px 16px; border-radius:8px;">Loading...</h2>
 <script>
-    function updateDateTime() {
-        const today = new Date();
-        const dateOptions = { weekday: 'long' year: 'numeric', month: 'long', day: 'numeric' };
-        const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-        document.getElementById('todayDate').textContent = 'Today is ' + today.toLocaleDateString('en-US', dateOptions) + ' | ' + today.toLocaleTimeString('en-US', timeOptions);
+    window.onload = function() {
+        function updateDateTime() {
+            const today = new Date();
+            const dateOptions = { weekday: 'long' year: 'numeric', month: 'long', day: 'numeric' };
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('todayDate').textContent = 'Today is ' + today.toLocaleDateString('en-US', dateOptions) + ' | ' + today.toLocaleTimeString('en-US', timeOptions);
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
     }
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
 </script>
     <div class="grid-container" id="onDutyGrid">
         <!-- Tutors on duty are moved here -->
