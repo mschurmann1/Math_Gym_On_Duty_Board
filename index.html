@@ -15,6 +15,14 @@
 
     <!-- On-Duty Grid -->
     <h1>These Tutors Are Here to Help — Just Raise Your Hand!</h1>
+
+    <h2 id="todayDate" style="text-align:center;"></h2>
+
+<script>
+  const today = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('todayDate').textContent = 'Today is ' + today.toLocaleDateString('en-US', options);
+</script>
     <div class="grid-container" id="onDutyGrid">
         <!-- Tutors on duty are moved here -->
     </div>
