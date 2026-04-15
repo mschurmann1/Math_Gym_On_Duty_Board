@@ -22,7 +22,7 @@
 <script>
     function updateDateTime() {
         const today = new Date();
-        const dateOptions = { weekday: 'long' year: 'numeric', month: 'long', day: 'numeric' };
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
         const el = document.getElementById('todayDate');
         if (el) {
